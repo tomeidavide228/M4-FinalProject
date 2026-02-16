@@ -3,12 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlayerHead
+  - Coin Point
+  - Coin Time
+  - Coin
+  - BlockDamage
+  - Large Coin Point
+  - Coin Heal
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
