@@ -17,12 +17,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _groundDistance = 0.2f;
     [SerializeField] private UnityEvent<bool> _onIsGrounded;
 
-    [Header("Sound Settings")]
-    [SerializeField] private AudioSource _Sound;
-    [SerializeField] private AudioClip _jumpSound;
-
     [Header("Camera")]
     [SerializeField] private Camera _mainCamera;
+
+    [Header("Sound Settings")]
+    [SerializeField] private AudioManager _sound;
 
     private Rigidbody _rb;
     private Vector3 _direction;
@@ -41,6 +40,7 @@ public class PlayerController : MonoBehaviour
         _animation = GetComponent<PlayerAnimation>();
         _rb = GetComponent<Rigidbody>();
         _rb.constraints = RigidbodyConstraints.FreezeRotation;
+        _sound = FindObjectOfType<AudioManager>();
     }
 
     private void Update()
@@ -85,8 +85,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-
-        _Sound.PlayOneShot(_jumpSound);
+        _sound.Jump();
         _rb.AddForce(Vector3.up * Mathf.Sqrt(_jumpForce * -2f * Physics.gravity.y), ForceMode.Impulse);
         _animation.OnJump();
     }

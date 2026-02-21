@@ -14,12 +14,12 @@ public class LifeController : MonoBehaviour
     [SerializeField] private UnityEvent _onDefeated;
 
     [Header("Sound Settings")]
-    [SerializeField] private AudioSource _Sound;
-    [SerializeField] private AudioClip _damageSound;
+    [SerializeField] private AudioManager _sound;
 
     private void Start()
     {
         SetHP(_maxHP);
+        _sound = FindObjectOfType<AudioManager>();
     }
 
     public int GetMaxHP() => _maxHP;
@@ -45,7 +45,7 @@ public class LifeController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _Sound.PlayOneShot(_damageSound);
+        _sound.Damage();
         AddHP(-damage);
     }
 }

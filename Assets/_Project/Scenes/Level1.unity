@@ -6557,7 +6557,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Use WASD to move, Space to jump, ESC or P to pause the game.\n\nCollect
     the coins:\nYellow \u2192 +1 point\nOrange \u2192 +10 points\nBlue \u2192 extra
-    time\nPink \u2192 restores HP\n\nReach 100 points to open the door on the right."
+    time\nPink \u2192 restores HP\n\nReach 150 points to open the door on the right."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0521e1a68b0e6cf49b5a73258b0f476a, type: 2}
   m_sharedMaterial: {fileID: 455653064827466774, guid: 0521e1a68b0e6cf49b5a73258b0f476a,
@@ -9165,6 +9165,7 @@ GameObject:
   - component: {fileID: 1032416193}
   - component: {fileID: 1032416191}
   - component: {fileID: 1032416194}
+  - component: {fileID: 1032416195}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -9199,7 +9200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b6b6a60be672b48a40e929a83b3a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _time: 600
+  _time: 300
   _onTimerChanged:
     m_PersistentCalls:
       m_Calls:
@@ -9269,6 +9270,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameOver: {fileID: 1298476991}
   _youWin: {fileID: 2004379318}
+--- !u!114 &1032416195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032416187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27ca79a6c70356438e07c45a9d300bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sound: {fileID: 2001308721}
+  _coinSound: {fileID: 8300000, guid: 8dfee40a78b7e194b8f11e0e5d41da93, type: 3}
+  _jumpSound: {fileID: 8300000, guid: 6e11849a2a4ec3e4480c87ff21c620e1, type: 3}
+  _damageSound: {fileID: 8300000, guid: 1f82fde4f23bf784e9a691a11eb192fd, type: 3}
+  _winSound: {fileID: 8300000, guid: dbd253ddd495f3649a783312aa03ab8d, type: 3}
 --- !u!1 &1033549103
 GameObject:
   m_ObjectHideFlags: 0
@@ -16320,6 +16338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Sound: {fileID: 2001308721}
   _winSound: {fileID: 8300000, guid: dbd253ddd495f3649a783312aa03ab8d, type: 3}
+  _sound: {fileID: 1032416195}
 --- !u!4 &1964205386 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2153717856622318294, guid: d41bd8f28efa0f14485949bc8f9d91ab,
@@ -19458,6 +19477,11 @@ PrefabInstance:
       objectReference: {fileID: 2001308721}
     - target: {fileID: 4455514462391162793, guid: 76a307075406eb7429b06d1a331c7b5c,
         type: 3}
+      propertyPath: _sound
+      value: 
+      objectReference: {fileID: 1032416195}
+    - target: {fileID: 4455514462391162793, guid: 76a307075406eb7429b06d1a331c7b5c,
+        type: 3}
       propertyPath: _onDoorOpen.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1960855874}
@@ -19471,6 +19495,11 @@ PrefabInstance:
       propertyPath: _Sound
       value: 
       objectReference: {fileID: 2001308721}
+    - target: {fileID: 5881714644420865195, guid: 76a307075406eb7429b06d1a331c7b5c,
+        type: 3}
+      propertyPath: _sound
+      value: 
+      objectReference: {fileID: 1032416195}
     - target: {fileID: 5881714644420865195, guid: 76a307075406eb7429b06d1a331c7b5c,
         type: 3}
       propertyPath: _mainCamera
@@ -19536,6 +19565,11 @@ PrefabInstance:
       propertyPath: _Sound
       value: 
       objectReference: {fileID: 2001308721}
+    - target: {fileID: 7114287127030303078, guid: 76a307075406eb7429b06d1a331c7b5c,
+        type: 3}
+      propertyPath: _sound
+      value: 
+      objectReference: {fileID: 1032416195}
     - target: {fileID: 7114287127030303078, guid: 76a307075406eb7429b06d1a331c7b5c,
         type: 3}
       propertyPath: _onDefeated.m_PersistentCalls.m_Calls.Array.data[1].m_Target

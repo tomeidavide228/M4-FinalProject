@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class Timer : MonoBehaviour
 {
     [Header("Timer Settings")]
-    [SerializeField] private float _time = 600f;
+    [SerializeField] private float _time = 300f;
 
     [Header("Unity Events Settings")]
     [SerializeField] private UnityEvent<float, float> _onTimerChanged;
